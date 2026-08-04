@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.LoadFlowApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/secondaryColor</item>
+        <item name="android:statusBarColor">@color/primaryDarkColor</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+</resources>

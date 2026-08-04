@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="@color/backgroundColor">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_power_icon"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="إعداد نظام القوى (Power System)"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/textColorPrimary"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="كم عدد البصات (Buses) في هذا النظام؟"
+        android:textSize="16sp"
+        android:textColor="@color/textColorSecondary"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/et_bus_count"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:inputType="number"
+        android:hint="أدخل رقم (مثال: 3)"
+        android:textColorHint="#757575"
+        android:textColor="@color/textColorPrimary"
+        android:background="@drawable/edit_text_bg"
+        android:padding="12dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="التالي: إدخال أنواع البصات"
+        android:textSize="18sp"
+        android:backgroundTint="@color/primaryColor"/>
+</LinearLayout>
