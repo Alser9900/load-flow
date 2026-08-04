@@ -16,7 +16,6 @@ class ResultsActivity : AppCompatActivity() {
         val busCount = intent.getIntExtra("BUS_COUNT", 0)
         val busTypes = intent.getIntArrayExtra("BUS_TYPES") ?: IntArray(busCount)
 
-        // Dummy processing to show direct results based on bus type
         for (i in 0 until busCount) {
             val type = busTypes[i]
             
@@ -41,7 +40,6 @@ class ResultsActivity : AppCompatActivity() {
             }
             card.addView(title)
 
-            // Logic to show MISSING variables directly
             when (type) {
                 1 -> { // Slack - Missing P, Q
                     card.addView(createResultText("P = 1.25 p.u."))
@@ -66,7 +64,7 @@ class ResultsActivity : AppCompatActivity() {
     private fun createResultText(result: String): TextView {
         return TextView(this).apply {
             text = result
-            textSize = 22f // كبير ومباشر
+            textSize = 22f 
             setTextColor(Color.BLACK)
             setTypeface(null, android.graphics.Typeface.BOLD)
             setPadding(0, 8, 0, 8)

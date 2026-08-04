@@ -83,7 +83,6 @@ class BusDataActivity : AppCompatActivity() {
         }
 
         btnNext.setOnClickListener {
-            // Check if all types selected
             var allSelected = true
             for (spinner in busSpinners) {
                 if (spinner.selectedItemPosition == 0) {
@@ -95,7 +94,6 @@ class BusDataActivity : AppCompatActivity() {
                 val intent = Intent(this, YbusActivity::class.java)
                 intent.putExtra("BUS_COUNT", busCount)
                 
-                // Pass types to Results
                 val typesList = busSpinners.map { it.selectedItemPosition }.toIntArray()
                 intent.putExtra("BUS_TYPES", typesList)
                 
