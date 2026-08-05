@@ -8,21 +8,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="مصفوفة Ybus (المسامحة)"
+        android:text="مصفوفة Ybus"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#FFFFFF"
         android:background="@color/primaryColor"
         android:padding="16dp"
-        android:gravity="center"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="أدخل قيم المصفوفة المطلوبة"
-        android:textSize="14sp"
-        android:textColor="@color/textColorSecondary"
-        android:padding="8dp"
         android:gravity="center"/>
 
     <ScrollView
@@ -33,13 +24,11 @@
         <HorizontalScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            
             <GridLayout
                 android:id="@+id/ybus_grid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"/>
-                
         </HorizontalScrollView>
     </ScrollView>
 
@@ -48,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_margin="16dp"
-        android:text="إيجاد المجاهيل وعرض النتائج"
+        android:text="عرض النتائج"
         android:textSize="18sp"
         android:backgroundTint="@color/successColor"/>
 </LinearLayout>

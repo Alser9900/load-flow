@@ -20,7 +20,7 @@ class BusDataActivity : AppCompatActivity() {
         val container = findViewById<LinearLayout>(R.id.buses_container)
         val btnNext = findViewById<Button>(R.id.btn_next_ybus)
 
-        val types = arrayOf("اختر النوع...", "Slack Bus", "PV (Generator) Bus", "PQ (Load) Bus")
+        val types = arrayOf("اختر النوع...", "Slack Bus", "PV Bus", "PQ Bus")
 
         for (i in 1..busCount) {
             val card = LinearLayout(this).apply {
@@ -51,7 +51,6 @@ class BusDataActivity : AppCompatActivity() {
             busSpinners.add(spinner)
             card.addView(spinner)
 
-            // Dynamic Inputs Container
             val inputsContainer = LinearLayout(this).apply {
                 orientation = LinearLayout.VERTICAL
                 setPadding(0, 16, 0, 0)
@@ -63,22 +62,21 @@ class BusDataActivity : AppCompatActivity() {
                     inputsContainer.removeAllViews()
                     when (position) {
                         1 -> { // Slack
-                            inputsContainer.addView(createInput("V (الجهد):"))
-                            inputsContainer.addView(createInput("الزاوية (Delta):"))
+                            inputsContainer.addView(createInput("V:"))
+                            inputsContainer.addView(createInput("الزاوية:"))
                         }
                         2 -> { // PV
-                            inputsContainer.addView(createInput("P (القدرة الفعالة):"))
-                            inputsContainer.addView(createInput("V (الجهد):"))
+                            inputsContainer.addView(createInput("P:"))
+                            inputsContainer.addView(createInput("V:"))
                         }
                         3 -> { // PQ
-                            inputsContainer.addView(createInput("P (القدرة الفعالة):"))
-                            inputsContainer.addView(createInput("Q (القدرة غير الفعالة):"))
+                            inputsContainer.addView(createInput("P:"))
+                            inputsContainer.addView(createInput("Q:"))
                         }
                     }
                 }
                 override fun onNothingSelected(parent: AdapterView<*>?) {}
             }
-
             container.addView(card)
         }
 
@@ -93,13 +91,11 @@ class BusDataActivity : AppCompatActivity() {
             if (allSelected) {
                 val intent = Intent(this, YbusActivity::class.java)
                 intent.putExtra("BUS_COUNT", busCount)
-                
                 val typesList = busSpinners.map { it.selectedItemPosition }.toIntArray()
                 intent.putExtra("BUS_TYPES", typesList)
-                
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "الرجاء تحديد نوع كل بص", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "حدد نوع كل بص", Toast.LENGTH_SHORT).show()
             }
         }
     }

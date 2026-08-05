@@ -8,5 +8,4 @@
     <color name="textColorPrimary">#000000</color> 
     <color name="textColorSecondary">#424242</color> 
     <color name="successColor">#2E7D32</color> 
-    <color name="boxStrokeColor">#9E9E9E</color>
 </resources>
